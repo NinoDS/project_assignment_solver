@@ -11,12 +11,12 @@ This project aims to solve the optimal project assignment problem using linear p
 
 1. Clone the repository:
    ```shell
-   git clone https://github.com/NinoDS/project-assignment-solver.git
+   git clone https://github.com/NinoDS/project_assignment_solver.git
    ```
 
 2. Navigate to the project directory:
    ```shell
-   cd project-assignment-solver
+   cd project_assignment_solver
    ```
 
 3. Install the required packages:
