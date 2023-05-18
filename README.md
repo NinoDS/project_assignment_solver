@@ -39,7 +39,7 @@ To use the project as a command-line tool, follow these steps:
 
 2. Run the following command to execute the project assignment:
    ```
-   python project_assignment.py preferences.csv capacities.csv
+   python main.py preferences.csv capacities.csv
    ```
 
    Replace `preferences.csv` and `capacities.csv` with the actual filenames of your input data.
