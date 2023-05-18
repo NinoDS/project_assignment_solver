@@ -27,6 +27,29 @@ This project aims to solve the optimal project assignment problem using linear p
 
 ## Usage
 
+### 1. Command-Line Tool
+
+To use the project as a command-line tool, follow these steps:
+
+1. Prepare your input data in CSV format, where:
+   - The preferences file contains a matrix of student preferences for each project.
+   - The capacities file contains the capacities of each project.
+
+   Example files: `preferences.csv`, `capacities.csv`
+
+2. Run the following command to execute the project assignment:
+   ```
+   python project_assignment.py preferences.csv capacities.csv
+   ```
+
+   Replace `preferences.csv` and `capacities.csv` with the actual filenames of your input data.
+
+3. The program will solve the project assignment problem, display the assignments, and save them to the `assignments.csv` file.
+
+4. Additionally, the objective value will be saved to the `objective_value.txt` file.
+
+### 2. Importing in Your Code
+
 You can use the `solve_projects` function to solve the project assignment problem. It takes the project capacities and student preferences as input and returns the assignment matrix and the objective value.
 
 ```python
