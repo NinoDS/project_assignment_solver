@@ -36,6 +36,6 @@ Der Code nutzt die GLOP-Bibliothek des OR-Tools-Pakets @ortools, um das lineare 
 
 Der Solver sucht nach der optimalen Lösung des Problems, wobei sicherstellt wird, dass jeder Schüler genau einem Projekt zugewiesen wird und dass die Kapazität jedes Projekts eingehalten wird. Es wird erwartet, dass der Solver eine optimale Zuweisung findet, die die Gesamtpräferenzen maximiert.
 
-Der Code ist auf GitHub unter #link("http://github.com/x/x") verfügbar.
+Der Code ist auf GitHub unter #link("https://github.com/NinoDS/project_assignment_solver") verfügbar.
 
 #bibliography("works.bib")
