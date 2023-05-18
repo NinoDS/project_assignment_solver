@@ -23,7 +23,8 @@ Um das Problem mathematisch zu modellieren, definieren wir folgende Variablen:
 Wir möchten die Variablen $x_(i j)$ so wählen, dass die Gesamtpräferenzen maximiert werden. Dies kann als lineares Optimierungsproblem formuliert werden:
 
 $ "maximiere"             &sum_(i=1)^s sum_(j=1)^p x_(i j) c_(i j) \
-  "unter den Bedingungen" &sum_(j=1)^p x_(i j) = 1 space forall i = 1,...,s "(jeder Schüler besucht genau ein Projekt)" \
+  "u.d.N.:" \
+                          &sum_(j=1)^p x_(i j) = 1 space forall i = 1,...,s "(jeder Schüler besucht genau ein Projekt)" \
                           &sum_(i=1)^s x_(i j) <= bold(t)_j space forall j = 1,...,p "(Projekte nehmen nicht mehr Teilnehmer auf als erlaubt)" \
                           &x_(i j) in {0,1} space forall i = 1,...,s, space j = 1,...,p
                           $
