@@ -35,7 +35,7 @@ from project_assignment_solver import solve_projects
 
 # Define project capacities and student preferences
 project_caps = [2, 3, 2]
-choice_matrix = np.array([[1, 2, 3], [3, 1, 2], [2, 3, 1]])
+choice_matrix = [[1, 2, 3], [3, 1, 2], [2, 3, 1]]
 
 # Solve the project assignment problem
 assignments, objective_value = solve_projects(len(project_caps), len(choice_matrix), choice_matrix, project_caps)
