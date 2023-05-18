@@ -2,6 +2,7 @@
 
 This project aims to solve the optimal project assignment problem using linear programming techniques. It provides a Python function to find the optimal assignment of students to projects based on their preferences and project capacities.
 
+> ⚠️ The repository might not be up-to-date. Please to the [GitHub repository](https://github.com/NinoDS/project_assignment_solver) for the latest version.
 ## Prerequisites
 
 - Python 3.7 or higher
