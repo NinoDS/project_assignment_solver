@@ -1,9 +1,18 @@
-from ortools.linear_solver import pywraplp
-import numpy as np
+"""
+This module provides functions to solve the optimal project assignment problem using linear programming.
+
+The problem involves assigning students to projects based on their preferences and project capacities.
+The goal is to maximize the overall satisfaction of the assignments while respecting the project capacity constraints.
+
+The module includes the following functions:
+- solve_projects: Solves the assignment problem given the number of projects, students, preferences, and project capacities.
+- solve_projects_from_csv: Solves the assignment problem by loading data from separate CSV files.
+"""
+
 import csv
 import argparse
-
-
+from ortools.linear_solver import pywraplp
+import numpy as np
 
 
 def solve_projects(projects, students, choice_matrix, project_caps):
@@ -57,7 +66,7 @@ def solve_projects(projects, students, choice_matrix, project_caps):
 
     # Ensure that each project has at most t_j students
     for j in range(projects):
-        solver.Add(sum([x[i][j] for i in range(students)]) <= t[j])
+        solver.Add(sum(x[i][j] for i in range(students)) <= t[j])
 
     # Set the objective function
     objective = solver.Objective()
@@ -101,7 +110,7 @@ def solve_projects_from_csv(capacity_file, preference_file):
     """
     # Load project capacities from CSV
     try:
-        with open(capacity_file, 'r') as file:
+        with open(capacity_file, 'r', encoding='utf-8') as file:
             reader = csv.reader(file)
             capacity_row = next(reader)  # Read the first row
             project_caps = [int(capacity) for capacity in capacity_row]
@@ -113,7 +122,7 @@ def solve_projects_from_csv(capacity_file, preference_file):
 
     # Load student preferences from CSV
     try:
-        with open(preference_file, 'r') as file:
+        with open(preference_file, 'r', encoding='utf-8') as file:
             reader = csv.reader(file)
             choice_matrix = [[int(choice) for choice in row] for row in reader]
             assert all(len(row) == len(project_caps) for row in choice_matrix), "Choice matrix shape does not match project capacities."
@@ -142,7 +151,7 @@ if __name__ == '__main__':
     np.savetxt('assignments.csv', assignments, delimiter=',', fmt='%d')
 
     # Save the objective value to a text file
-    with open('objective_value.txt', 'w') as file:
+    with open('objective_value.txt', 'w', encoding='utf-8') as file:
         file.write(str(objective_value))
 
     print('Saved assignments to assignments.csv and objective value to objective_value.txt')
