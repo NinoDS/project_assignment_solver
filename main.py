@@ -27,7 +27,8 @@ def solve_projects(projects, students, choice_matrix, project_caps):
                    - The objective value of the optimized assignment.
 
         Raises:
-            AssertionError: If the input shapes are not valid or if there are not enough project spots for all students.
+            AssertionError: If the input shapes are not valid, if there are not enough project spots for all students
+                            or if the solver fails to find an optimal solution.
 
         Notes:
             - The choice matrix should have shape (students, projects), where each entry represents the preference of a
@@ -51,23 +52,11 @@ def solve_projects(projects, students, choice_matrix, project_caps):
 
     # Ensure each student is assigned to exactly one project
     for i in range(students):
-        total = None
-        for j in range(projects):
-            if total is None:
-                total = x[i][j]
-            else:
-                total = total + x[i][j]
-        solver.Add(total == 1)
+        solver.Add(sum(x[i]) == 1)
 
     # Ensure that each project has at most t_j students
     for j in range(projects):
-        total = None
-        for i in range(students):
-            if total is None:
-                total = x[i][j]
-            else:
-                total = total + x[i][j]
-        solver.Add(total <= t[j])
+        solver.Add(sum([x[i][j] for i in range(students)]) <= t[j])
 
     # Set the objective function
     objective = solver.Objective()
