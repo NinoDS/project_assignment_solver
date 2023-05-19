@@ -4,8 +4,6 @@ import csv
 import argparse
 
 
-# Create a linear solver using the GLOP backend
-solver = pywraplp.Solver.CreateSolver('GLOP')
 
 
 def solve_projects(projects, students, choice_matrix, project_caps):
@@ -45,6 +43,9 @@ def solve_projects(projects, students, choice_matrix, project_caps):
     assert np.array(choice_matrix).shape == (students, projects), 'Choice matrix must be of shape (students, projects)'
     assert np.array(project_caps).shape == (projects,), 'Project caps must be of shape (projects,)'
     assert np.sum(project_caps) >= students, 'There must be enough project spots for all students'
+
+    # Create a linear solver using the GLOP backend
+    solver = pywraplp.Solver.CreateSolver('GLOP')
 
     x = [[solver.BoolVar(f'x_{i}_{j}') for j in range(projects)] for i in range(students)]
     c = choice_matrix
