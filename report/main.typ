@@ -9,7 +9,7 @@
 
 
 = Einleitung
-In dieser Projektwoche steht die optimale Projektzuweisung im Fokus. Die Schüler haben die Möglichkeit, ihre Präferenzen anzugeben, indem sie einen Erstwunsch, Zweitwunsch, Drittwunsch und einen Nichtwunsch angeben. Gleichzeitig können die verschiedenen Projekte eine unterschiedliche Anzahl an Teilnehmern aufnehmen. Das Ziel besteht darin, eine Zuweisung zu finden, die die Gesamtzufriedenheit der Schüler maximiert.
+Ein essenzieller Bestandteil einer gelungenen Projektwoche ist eine gute Projektzuweisung. Die Schüler haben die Möglichkeit, ihre Präferenzen anzugeben, indem sie einen Erstwunsch, Zweitwunsch, Drittwunsch und einen Nichtwunsch angeben. Gleichzeitig können die verschiedenen Projekte eine unterschiedliche Anzahl an Teilnehmern aufnehmen. Das Ziel ist es, unter den Einschränkungen der Projektplätze und Präferenzen der Schüler eine ideale Projektzuweisung zu finden, welche die Gesamtzufriedenheit der Schüler zu optimiert.
 
 = Mathematische Modellierung
 Um das Problem mathematisch zu modellieren, definieren wir folgende Variablen:
